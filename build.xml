@@ -151,7 +151,7 @@
         </java>
     </target>
 
-    <target name="test" depends="compileTest">
+    <target name="test-ant" depends="compileTest">
         <junit showoutput="yes">
             <classpath>
                 <fileset refid="lib.jars" />
@@ -259,7 +259,7 @@
         </javadoc>
     </target>
 
-    <target name="javadoc" depends="javadoc-api,javadoc-gui,javadoc-dev">
+    <target name="javadoc-ant" depends="javadoc-api,javadoc-gui,javadoc-dev">
     </target>
 
     <target name="compile" depends="prepare" description="compile the source ">
@@ -388,7 +388,7 @@
         </jar>
     </target>
 
-    <target name="jar-docs" depends="compile, javadoc">
+    <target name="jar-docs" depends="compile, javadoc-ant">
         <jar destfile="jars/libarx-${arx.version}-doc.jar">
             <fileset dir="doc/api" defaultexcludes="no" />
         </jar>

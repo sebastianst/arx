@@ -1,2 +1,17 @@
 ant.importBuild 'build.xml'
 
+apply plugin: 'java'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+  testCompile 'junit:junit:4.+'
+}
+
+test {
+	filter {
+		includeTestsMatching "org.deidentifier.arx.test.Test*"
+	}
+}

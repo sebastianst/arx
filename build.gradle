@@ -1,5 +1,20 @@
 apply plugin: 'java'
 
+sourceSets {
+  gui {
+    java {
+      compileClasspath += main.output
+      runtimeClasspath += main.output
+    }
+  }
+  example {
+    java {
+      compileClasspath += main.output
+      runtimeClasspath += main.output
+    }
+  }
+}
+
 repositories {
   mavenCentral()
 }
@@ -36,6 +51,11 @@ dependencies {
 
   // junit testing dependencies
   testCompile 'junit:junit:4.+'
+}
+
+configurations {
+  exampleCompile.extendsFrom compile
+  guiCompile.extendsFrom compile
 }
 
 test {

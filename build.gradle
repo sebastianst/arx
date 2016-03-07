@@ -20,6 +20,11 @@ repositories {
   mavenCentral()
 }
 
+configurations {
+  exampleCompile.extendsFrom compile
+  guiCompile.extendsFrom compile
+}
+
 dependencies {
   // main dependencies
   compile 'colt:colt:1.2.+',
@@ -50,11 +55,6 @@ dependencies {
 
   // junit testing dependencies
   testCompile 'junit:junit:4.+'
-}
-
-configurations {
-  exampleCompile.extendsFrom compile
-  guiCompile.extendsFrom compile
 }
 
 test {

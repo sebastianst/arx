@@ -13,6 +13,12 @@ sourceSets {
       runtimeClasspath += main.output
     }
   }
+  test {
+    java {
+      compileClasspath += example.output + gui.output
+      runtimeClasspath += example.output + gui.output
+    }
+  }
 }
 
 repositories {

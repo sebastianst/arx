@@ -41,11 +41,9 @@ dependencies {
       'org.apache.hadoop:hadoop-core:1.2.+',
       'com.google.guava:guava:18.0',
       'org.slf4j:slf4j-api:1.7.+'
-
   // prasser github java projects
-  compile files('lib/objectselector/objectselector-0.1-lib.jar',
-    'lib/newtonraphson/newtonraphson-0.0.1.jar',
-    'lib/jhpl/jhpl-0.0.1.jar')
+  compile fileTree(dir: 'lib/main', include: '**/*.jar')
+
   // additional GUI dependencies
   //guiCompile 
 

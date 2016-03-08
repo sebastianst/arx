@@ -39,5 +39,4 @@ public abstract class AbstractTestDataDir {
     protected static Data TestData(String s) throws IOException {
         return Data.create(TestDataDir + s + ".csv", ';');
     }
-
 }

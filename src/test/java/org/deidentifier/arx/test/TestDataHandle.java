@@ -391,7 +391,7 @@ public class TestDataHandle extends AbstractTest {
     @Test
     public void testSubset3() throws IllegalArgumentException, IOException {
         
-        Data data = Data.create("../arx-data/data-junit/dis.csv", ';');
+        Data data = TestData("dis");
         data.getDefinition().setAttributeType("age", Hierarchy.create("../arx-data/data-junit/dis_hierarchy_age.csv", ';'));
         data.getDefinition().setAttributeType("gender", AttributeType.INSENSITIVE_ATTRIBUTE);
         data.getDefinition().setAttributeType("zipcode", AttributeType.INSENSITIVE_ATTRIBUTE);
@@ -424,7 +424,7 @@ public class TestDataHandle extends AbstractTest {
     @Test
     public void testSubset4() throws IllegalArgumentException, IOException {
         
-        Data data = Data.create("../arx-data/data-junit/dis.csv", ';');
+        Data data = TestData("dis");
         data.getDefinition().setAttributeType("age", Hierarchy.create("../arx-data/data-junit/dis_hierarchy_age.csv", ';'));
         data.getDefinition().setAttributeType("gender", AttributeType.INSENSITIVE_ATTRIBUTE);
         data.getDefinition().setAttributeType("zipcode", AttributeType.INSENSITIVE_ATTRIBUTE);
@@ -453,7 +453,7 @@ public class TestDataHandle extends AbstractTest {
     @Test
     public void testSubset5() throws IllegalArgumentException, IOException {
         
-        Data data = Data.create("../arx-data/data-junit/dis.csv", ';');
+        Data data = TestData("dis");
         data.getDefinition().setAttributeType("age", Hierarchy.create("../arx-data/data-junit/dis_hierarchy_age.csv", ';'));
         data.getDefinition().setAttributeType("gender", Hierarchy.create("../arx-data/data-junit/dis_hierarchy_gender.csv", ';'));
         data.getDefinition().setAttributeType("zipcode", AttributeType.INSENSITIVE_ATTRIBUTE);

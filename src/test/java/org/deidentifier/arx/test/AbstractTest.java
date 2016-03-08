@@ -27,7 +27,7 @@ import org.junit.Before;
 /**
  * 
  */
-public abstract class AbstractTest {
+public abstract class AbstractTest extends AbstractTestDataDir {
     
     /**
      * 

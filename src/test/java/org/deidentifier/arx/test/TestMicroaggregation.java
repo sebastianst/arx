@@ -110,7 +110,7 @@ public class TestMicroaggregation extends AbstractTest {
         config.setMetric(Metric.createLossMetric(AggregateFunction.RANK));
         
         ARXResult result = anonymizer.anonymize(data, config);
-        DataHandle exptectedOutput = Data.create("../arx-data/data-junit/adult_age_microaggregated.csv", ';').getHandle();
+        DataHandle exptectedOutput = TestData("adult_age_microaggregated").getHandle();
         
         DataHandle output = result.getOutput();
         for (int i = 0; i < output.getNumRows(); i++) {

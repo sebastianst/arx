@@ -17,6 +17,10 @@
 
 package org.deidentifier.arx.test;
 
+import org.deidentifier.arx.Data;
+
+import java.io.IOException;
+
 /**
  * Test Data Directory Provider
  *
@@ -31,4 +35,9 @@ public abstract class AbstractTestDataDir {
      * Constant string pointing to the data directory
      */
     protected static String TestDataDir = System.getProperty("test.data.dir", "../arx-data/data-junit/");
+
+    protected static Data TestData(String s) throws IOException {
+        return Data.create(TestDataDir + s + ".csv", ';');
+    }
+
 }

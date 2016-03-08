@@ -98,7 +98,7 @@ public class TestMicroaggregation extends AbstractTest {
      */
     @Test
     public void testMicroaggregationAdult() throws IOException {
-        Data data = getDataObject("../arx-data/data-junit/adult.csv");
+        Data data = getDataObject(TestFilePath("adult"));
         
         data.getDefinition().setAttributeType("age", MicroAggregationFunction.createArithmeticMean());
         data.getDefinition().setDataType("age", DataType.INTEGER);

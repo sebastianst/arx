@@ -17,6 +17,7 @@
 
 package org.deidentifier.arx.test;
 
+import org.deidentifier.arx.AttributeType.Hierarchy;
 import org.deidentifier.arx.Data;
 
 import java.io.IOException;
@@ -26,7 +27,8 @@ import java.io.IOException;
  *
  * This abstract class provides all Unit test classes with the test data directory.
  * The directory can be passed as system property <b>test.data.dir</b>, either absolute,
- * or relative to the arx directory. If not specified, the default "../arx-data/data-junit/" is used.
+ * or relative to the arx directory. If not specified, the default "../arx-data/data-junit/" is used. Don't forget to
+ * add trailing '/'.
  *
  * @author Sebastian Stammler (stammler@cbs.tu-darmstadt.de)
  */
@@ -38,5 +40,9 @@ public abstract class AbstractTestDataDir {
 
     protected static Data TestData(String s) throws IOException {
         return Data.create(TestDataDir + s + ".csv", ';');
+    }
+
+    protected static Hierarchy TestHierarchy(String name, String attr) throws IOException {
+        return Hierarchy.create(TestDataDir + name + "_hierarchy_" + attr + ".csv", ';');
     }
 }

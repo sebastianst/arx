@@ -38,11 +38,15 @@ public abstract class AbstractTestDataDir {
      */
     protected static String TestDataDir = System.getProperty("test.data.dir", "../arx-data/data-junit/");
 
+    protected static String TestFilePath(String s) {
+        return TestDataDir + s + ".csv";
+    }
+
     protected static Data TestData(String s) throws IOException {
-        return Data.create(TestDataDir + s + ".csv", ';');
+        return Data.create(TestFilePath(s), ';');
     }
 
     protected static Hierarchy TestHierarchy(String name, String attr) throws IOException {
-        return Hierarchy.create(TestDataDir + name + "_hierarchy_" + attr + ".csv", ';');
+        return Hierarchy.create(TestFilePath(name + "_hierarchy_" + attr), ';');
     }
 }

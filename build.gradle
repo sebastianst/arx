@@ -74,8 +74,8 @@ test {
   // Let tests run in parallel
   maxParallelForks = Runtime.runtime.availableProcessors()
 
-  // show standard out and standard error of the test JVM(s) on the console
-  testLogging.showStandardStreams = true
+  // Don't show standard out and standard error of the test JVM(s) on the console
+  testLogging.showStandardStreams = false
 
   filter {
     includeTestsMatching "org.deidentifier.arx.test.Test*"

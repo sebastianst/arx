@@ -64,13 +64,20 @@ dependencies {
       'org.xerial:sqlite-jdbc:3.8.+'
   // dendencies not present/inactive/outdated in maven
   guiCompile fileTree(dir: 'lib/gui', include: '**/*.jar')
+  guiCompile files('lib/swt/swt-4.2.1-gtk-linux-x86_64.jar')
 
   // junit testing dependencies
   testCompile 'junit:junit:4.+'
 }
 
 test {
-	filter {
-		includeTestsMatching "org.deidentifier.arx.test.Test*"
-	}
+  // Let tests run in parallel
+  maxParallelForks = Runtime.runtime.availableProcessors()
+
+  // show standard out and standard error of the test JVM(s) on the console
+  testLogging.showStandardStreams = true
+
+  filter {
+    includeTestsMatching "org.deidentifier.arx.test.Test*"
+  }
 }

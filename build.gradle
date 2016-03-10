@@ -29,6 +29,7 @@ repositories {
 configurations {
   exampleCompile.extendsFrom compile
   guiCompile.extendsFrom compile
+  testRuntime.extendsFrom exampleRuntime
 }
 
 dependencies {
@@ -68,6 +69,9 @@ dependencies {
 
   // junit testing dependencies
   testCompile 'junit:junit:4.+'
+
+  // Example21 needs sqlite
+  exampleRuntime 'org.xerial:sqlite-jdbc:3.8.+'
 }
 
 test {

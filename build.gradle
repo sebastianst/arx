@@ -85,3 +85,9 @@ test {
     includeTestsMatching "org.deidentifier.arx.test.Test*"
   }
 }
+
+// Run example with 'gradle -PexampleMainClass=ExampleXX runExample'
+task runExample(type:JavaExec) {
+  main = "org.deidentifier.arx.examples." + exampleMainClass
+  classpath = sourceSets.example.runtimeClasspath
+}
